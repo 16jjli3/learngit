@@ -1,0 +1,247 @@
+C:\Users\win8>git config -global user.name "Lee"
+error: did you mean `--global` (with two dashes ?)
+
+C:\Users\win8>git config --global user.name "Lee"
+
+C:\Users\win8>git config -- user.email "16jjli3@stu.edu.cn"
+fatal: not in a git directory
+
+C:\Users\win8>git config --global user.email "16jjli3@stu.edu.cn"
+
+C:\Users\win8>mkdir learngit
+
+C:\Users\win8>cd learngit
+
+C:\Users\win8\learngit>pwd
+'pwd' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+C:\Users\win8\learngit>cd ..
+
+C:\Users\win8>pwd
+'pwd' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+C:\Users\win8>cd learngit
+
+C:\Users\win8\learngit>git init
+Initialized empty Git repository in C:/Users/win8/learngit/.git/
+
+C:\Users\win8\learngit>is -ah
+'is' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+C:\Users\win8\learngit>ls -ah
+'ls' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+C:\Users\win8\learngit>ls -ah
+'ls' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+C:\Users\win8\learngit>git add readme.txt
+
+C:\Users\win8\learngit>git commit -m "wrote a readme file"
+[master (root-commit) a98610d] wrote a readme file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 readme.txt
+
+C:\Users\win8\learngit>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\win8\learngit>git diff
+diff --git a/readme.txt b/readme.txt
+index d8036c1..013b5bc 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,2 +1,2 @@
+-Git is a version control system.
++Git is a distributed version control system.
+ Git is free software.
+\ No newline at end of file
+
+C:\Users\win8\learngit>git add readme.txt
+
+C:\Users\win8\learngit>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   readme.txt
+
+
+C:\Users\win8\learngit>git commit -m "add distributed"
+[master 071ab79] add distributed
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\win8\learngit>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\win8\learngit>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\win8\learngit>git diff
+diff --git a/readme.txt b/readme.txt
+index 013b5bc..8443d23 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,2 +1,2 @@
+ Git is a distributed version control system.
+-Git is free software.
+\ No newline at end of file
++Git is free software distributed under the GPL.
+
+C:\Users\win8\learngit>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\win8\learngit>git diff
+diff --git a/readme.txt b/readme.txt
+index 013b5bc..99e0e11 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,2 +1,2 @@
+ Git is a distributed version control system.
+-Git is free software.
+\ No newline at end of file
++Git is free software distributed under the GPL.
+\ No newline at end of file
+
+C:\Users\win8\learngit>git add readme.txt
+
+C:\Users\win8\learngit>git commit -m "append GPL"
+[master 7b0788e] append GPL
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\win8\learngit>git log
+commit 7b0788eabe3d2269a01f3926f9bf7832d7781aec (HEAD -> master)
+Author: Lee <16jjli3@stu.edu.cn>
+Date:   Tue Jul 10 10:33:34 2018 +0800
+
+    append GPL
+
+commit 071ab795182a9964ed0be5b0dafed4751594115b
+Author: Lee <16jjli3@stu.edu.cn>
+Date:   Tue Jul 10 10:30:56 2018 +0800
+
+    add distributed
+
+commit a98610d40c0826eb3e72537e3e44ff19175acece
+Author: Lee <16jjli3@stu.edu.cn>
+Date:   Tue Jul 10 10:24:10 2018 +0800
+
+    wrote a readme file
+
+C:\Users\win8\learngit>git log --pretty=oneline
+7b0788eabe3d2269a01f3926f9bf7832d7781aec (HEAD -> master) append GPL
+071ab795182a9964ed0be5b0dafed4751594115b add distributed
+a98610d40c0826eb3e72537e3e44ff19175acece wrote a readme file
+
+C:\Users\win8\learngit>git reset --hard HEAD^
+More?
+
+
+win8@Lenovo-PC MINGW64 ~
+$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+
+win8@Lenovo-PC MINGW64 ~
+$ cd learngit
+
+win8@Lenovo-PC MINGW64 ~/learngit (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        thefirstcommad.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+win8@Lenovo-PC MINGW64 ~/learngit (master)
+$ git reset --hard HEAD^
+HEAD is now at 071ab79 add distributed
+
+win8@Lenovo-PC MINGW64 ~/learngit (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software.
+win8@Lenovo-PC MINGW64 ~/learngit (master)
+$ git log
+commit 071ab795182a9964ed0be5b0dafed4751594115b (HEAD -> master)
+Author: Lee <16jjli3@stu.edu.cn>
+Date:   Tue Jul 10 10:30:56 2018 +0800
+
+    add distributed
+
+commit a98610d40c0826eb3e72537e3e44ff19175acece
+Author: Lee <16jjli3@stu.edu.cn>
+Date:   Tue Jul 10 10:24:10 2018 +0800
+
+    wrote a readme file
+
+win8@Lenovo-PC MINGW64 ~/learngit (master)
+$ git reset --hard 7b0788
+HEAD is now at 7b0788e append GPL
+
+win8@Lenovo-PC MINGW64 ~/learngit (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+win8@Lenovo-PC MINGW64 ~/learngit (master)
+$ git log
+commit 7b0788eabe3d2269a01f3926f9bf7832d7781aec (HEAD -> master)
+Author: Lee <16jjli3@stu.edu.cn>
+Date:   Tue Jul 10 10:33:34 2018 +0800
+
+    append GPL
+
+commit 071ab795182a9964ed0be5b0dafed4751594115b
+Author: Lee <16jjli3@stu.edu.cn>
+Date:   Tue Jul 10 10:30:56 2018 +0800
+
+    add distributed
+
+commit a98610d40c0826eb3e72537e3e44ff19175acece
+Author: Lee <16jjli3@stu.edu.cn>
+Date:   Tue Jul 10 10:24:10 2018 +0800
+
+    wrote a readme file
+
+win8@Lenovo-PC MINGW64 ~/learngit (master)
+$ git relog
+git: 'relog' is not a git command. See 'git --help'.
+
+The most similar command is
+        reflog
+
+win8@Lenovo-PC MINGW64 ~/learngit (master)
+$ git reflog
+7b0788e (HEAD -> master) HEAD@{0}: reset: moving to 7b0788
+071ab79 HEAD@{1}: reset: moving to HEAD^
+7b0788e (HEAD -> master) HEAD@{2}: commit: append GPL
+071ab79 HEAD@{3}: commit: add distributed
+a98610d HEAD@{4}: commit (initial): wrote a readme file
+
+win8@Lenovo-PC MINGW64 ~/learngit (master)
